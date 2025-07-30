@@ -70,7 +70,8 @@ jobs:
             tag=ipq40xx-generic-openwrt-24.10.2
             echo "platform=ipq40xx/generic" >> $GITHUB_ENV
           elif [ "$profiles" = "cudy_tr3000-256mb-v1" ]; then
-            tag=mediatek-filogic-snapshot
+            #tag=mediatek-filogic-snapshot
+            tag=mediatek-filogic-24.10-SNAPSHOT
             echo "platform=mediatek/filogic" >> $GITHUB_ENV
           else
             tag=mediatek-filogic-openwrt-24.10.2
