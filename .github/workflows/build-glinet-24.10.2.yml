@@ -13,7 +13,8 @@ on:
           - glinet_gl-b2200
           - cudy_tr3000-v1
           - cudy_tr3000-v1-ubootmod
-        default: cudy_tr3000-v1
+          - cudy_tr3000-256mb-v1
+        default: cudy_tr3000-256mb-v1
       include_docker:
         description: |
           是否编译 Docker 插件
