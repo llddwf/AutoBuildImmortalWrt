@@ -105,8 +105,8 @@ jobs:
       - name: Upload ImmortalWrt as release assets
         uses: softprops/action-gh-release@v2.2.1
         with:
-          tag_name: Autobuild-GL-iNet
-          name: ImmortalWrt-GL-iNet
+          tag_name: mediatek-filogic
+          name: ${{ github.event.inputs.profile }}
           body_path: ${{ github.workspace }}/mediatek-filogic/info.md
           files: |
             ${{ github.workspace }}/bin/targets/${{ env.platform }}/*.bin
