@@ -3,7 +3,7 @@ source shell/custom-packages.sh
 # 该文件实际为imagebuilder容器内的build.sh
 
 if [ -n "$CUSTOM_PACKAGES" ]; then
-  echo "✅ 你选择了第三方软件包：$CUSTOM_PACKAGES"
+  #echo "✅ 你选择了第三方软件包：$CUSTOM_PACKAGES"
   if [ "$PROFILE" = "glinet_gl-mt3000" ]; then
     echo "❌ 检查到您集成了第三方软件包 由于mt3000闪存空间较小 不支持此操作"
     echo "✅ 系统将自动帮你注释掉shell/custom-packages.sh中的插件 目前支持第三方插件集成的机型是mt2500/mt6000等大闪存机型"
@@ -79,6 +79,9 @@ PACKAGES="$PACKAGES luci-i18n-filemanager-zh-cn"
 # 静态文件服务器dufs(推荐)
 #PACKAGES="$PACKAGES luci-i18n-dufs-zh-cn"
 PACKAGES="$PACKAGES luci-app-store"
+# 分区扩容 by sirpdboy 
+PACKAGES="$PACKAGES luci-app-partexp"
+PACKAGES="$PACKAGES luci-i18n-partexp-zh-cn"
 
 # 第三方软件包 合并
 # ======== shell/custom-packages.sh =======
