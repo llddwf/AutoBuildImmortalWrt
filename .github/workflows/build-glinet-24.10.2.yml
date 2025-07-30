@@ -11,7 +11,9 @@ on:
           - glinet_gl-mt2500
           - glinet_gl-mt6000
           - glinet_gl-b2200
-        default: glinet_gl-mt6000
+          - cudy_tr3000-v1
+          - cudy_tr3000-v1-ubootmod
+        default: cudy_tr3000-v1
       include_docker:
         description: |
           是否编译 Docker 插件
@@ -91,14 +93,6 @@ jobs:
               immortalwrt/imagebuilder:$tag /bin/bash /home/build/immortalwrt/build.sh
           done
 
-      - name: Generate Firmware SHA-256
-        run: |
-          cp ${{ github.workspace }}/bin/targets/${{ env.platform }}/*.bin ${{ github.workspace }}
-          for file in *.bin; do
-            sha256sum "$file" > "$file.sha256"
-            sha256sum -c "$file.sha256"
-          done
-
       - name: Create info
         run: |
           if [ "${{ github.event.inputs.include_docker }}" == "yes" ]; then
@@ -115,8 +109,9 @@ jobs:
           name: ImmortalWrt-GL-iNet
           body_path: ${{ github.workspace }}/mediatek-filogic/info.md
           files: |
-            ${{ github.workspace }}/*.bin
-            ${{ github.workspace }}/*.sha256
+            ${{ github.workspace }}/bin/targets/${{ env.platform }}/*.bin
+            ${{ github.workspace }}/bin/targets/${{ env.platform }}/*.itb
+            ${{ github.workspace }}/bin/targets/${{ env.platform }}/*.fip
           token: ${{ secrets.GITHUB_TOKEN }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
