@@ -4,7 +4,7 @@ source shell/custom-packages.sh
 
 if [ -n "$CUSTOM_PACKAGES" ]; then
   #echo "✅ 你选择了第三方软件包：$CUSTOM_PACKAGES"
-  if [ "$PROFILE" = "glinet_gl-mt3000" ]; then
+  if [ "$PROFILE" = "glinet_gl-mt30001" ]; then
     echo "❌ 检查到您集成了第三方软件包 由于mt3000闪存空间较小 不支持此操作"
     echo "✅ 系统将自动帮你注释掉shell/custom-packages.sh中的插件 目前支持第三方插件集成的机型是mt2500/mt6000等大闪存机型"
     CUSTOM_PACKAGES=""
