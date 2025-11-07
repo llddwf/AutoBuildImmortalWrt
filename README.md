@@ -93,7 +93,7 @@ https://wkdaily.cpolar.cn/15
 ### https://github.com/ophub/amlogic-s9xxx-openwrt
 ### https://github.com/sirpdboy
 ### https://github.com/wukongdaily/ib-overlay
-#### [高级卸载插件出处] https://www.vumstar.com/10040/
+### 高级卸载插件出处 by VedioTalk https://xz.vumstar.com
 
 ## ❤️赞助作者 ⬇️⬇️
 
